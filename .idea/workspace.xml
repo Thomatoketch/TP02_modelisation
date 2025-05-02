@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6475ea52-41f5-4076-82da-c81d8325329c" name="Changes" comment="start">
-      <change afterPath="$PROJECT_DIR$/Classes/Face.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Classes/HalfEdge.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Classes/Mesh.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Classes/Vertex.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="6475ea52-41f5-4076-82da-c81d8325329c" name="Changes" comment="start" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
