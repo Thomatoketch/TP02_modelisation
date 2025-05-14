@@ -1,8 +1,12 @@
-import HalfEdge
+from Classes.HalfEdge import *
+from Classes.Face import *
 
 class Vertex :
-    def __init__(self, x : float, y : float, z : float, half_edge_out : HalfEdge):
-        self.x = x
-        self.y = y
-        self.z = z
-        self.half_edge_out = half_edge_out
+    def __init__(self, x : float, y : float, z : float):
+        self.x : float = x
+        self.y : float = y
+        self.z : float = z
+        self.half_edge_out :  HalfEdge = None
+
+    def info(self):
+        print(f'Vertex : {self.index}, [{self.x}, {self.y}, {self.z}]')
