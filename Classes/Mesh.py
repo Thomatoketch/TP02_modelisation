@@ -1,6 +1,8 @@
 from Classes.Vertex import *
 from Classes.HalfEdge import *
 from Classes.Face import *
+import polyscope as ps
+import numpy as np
 
 class Mesh :
     def __init__(self):
@@ -55,12 +57,58 @@ class Mesh :
                 he.twin = twin
                 twin.twin = he
 
-    def verification(self):
+    def vertex_neighbors(self, v):
+        neighbors = []
+        start = v.half_edge_out
+        he = start
+        while True:
+            neighbors.append(he.destination)
+            he = he.twin.next if he.twin else None
+            if he is None or he == start:
+                break
+        return neighbors
+
+    def info(self):
         """Affiche le nombre de sommets, faces et demi-arêtes"""
         print(f"Sommets    : {len(self.vertex)}")
         print(f"Faces      : {len(self.faces)}")
         print(f"Half-Edges : {len(self.half_edges)}")
-        """[v.info() for v in self.vertex]
-        [f.info() for f in self.face]
-        [v.info() for v in self.vertex]"""
 
+        # affichage des voisins pour les trois premiers sommets
+        for i, v in enumerate(self.vertex[:3]):
+            neighbors = self.vertex_neighbors(v)
+            print(f"Voisins du sommet {i} : {[self.vertex.index(n) for n in neighbors]}")
+
+        # sommets d'une face donnée
+        for i, f in enumerate(self.faces[:2]):
+            he_start = f.edge
+            he = he_start
+            verts = []
+            while True:
+                verts.append(self.vertex.index(he.destination))
+                he = he.next
+                if he == he_start:
+                    break
+            print(f"Face {i} : {verts}")
+
+    def visualize_faces(self, filename : str):
+        vertices = []
+        faces = []
+        with open(filename, 'r') as file:
+            for line in file:
+                toks = line.split()
+                if line.startswith("v "):
+                    vertices.append([float(v) for v in toks[1:]])
+                elif line.startswith("f "):
+                    face = [int(v.split('/')[0]) - 1 for v in toks[1:]]
+                    faces.append(face)
+        # Initialisation de Polyscope
+        ps.init()
+
+        # Extraction des coordonnées des sommets
+
+        # Ajout du maillage à Polyscope
+        ps.register_surface_mesh("Maillage", np.array(vertices), np.array(faces))
+
+        # Affichage
+        ps.show()
