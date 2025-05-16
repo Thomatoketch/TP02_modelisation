@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6475ea52-41f5-4076-82da-c81d8325329c" name="Changes" comment="Partie 1 fini">
-      <change afterPath="$PROJECT_DIR$/function.py" afterDir="false" />
+    <list default="true" id="6475ea52-41f5-4076-82da-c81d8325329c" name="Changes" comment="question 4">
+      <change afterPath="$PROJECT_DIR$/Hexa.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/Face.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/Face.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/HalfEdge.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/HalfEdge.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/Mesh.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/Mesh.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/Vertex.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/Vertex.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cube.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Cube.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,23 +61,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Mesh.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Cours/Semestre 8/Modélisation_Géométrique_3D/TP02/main.py&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Mesh.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Cours/Semestre 8/Modélisation_Géométrique_3D/TP02",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Cours\Semestre 8\Modélisation_Géométrique_3D\TP02" />
@@ -137,7 +134,8 @@
       <workItem from="1746889111807" duration="6015000" />
       <workItem from="1747051379412" duration="726000" />
       <workItem from="1747235129792" duration="3816000" />
-      <workItem from="1747290819674" duration="3472000" />
+      <workItem from="1747290819674" duration="3570000" />
+      <workItem from="1747299329167" duration="1340000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <option name="closed" value="true" />
@@ -155,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747238762825</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="question 4">
+      <option name="closed" value="true" />
+      <created>1747295529573</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747295529573</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,10 +193,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="start" />
     <MESSAGE value="Partie 1 fini" />
-    <option name="LAST_COMMIT_MESSAGE" value="Partie 1 fini" />
+    <MESSAGE value="question 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="question 4" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/TP02$main.coverage" NAME="main Coverage Results" MODIFIED="1747295445853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/TP02$main.coverage" NAME="main Coverage Results" MODIFIED="1747300140259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/TP02$Mesh.coverage" NAME="Mesh Coverage Results" MODIFIED="1746638832254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Classes" />
   </component>
 </project>
