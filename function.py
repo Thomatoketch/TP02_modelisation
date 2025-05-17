@@ -33,5 +33,5 @@ def print_mesh_details(mesh):
 
 def print_edge(mesh):
     for i in range(len(mesh.half_edges)):
-        if mesh.half_edges[i].twin == None:
+        if mesh.half_edges[i].twin is None:
             print(i)

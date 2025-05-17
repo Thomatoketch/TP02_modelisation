@@ -3,6 +3,7 @@ from Classes.HalfEdge import *
 from Classes.Face import *
 import polyscope as ps
 import numpy as np
+import random
 
 class Mesh :
     def __init__(self):
@@ -36,12 +37,11 @@ class Mesh :
             first_he = None
 
             pairs = list(zip(verts, verts[1:])) + [(verts[-1], verts[0])]
-            print(pairs)
 
             for src_idx, dst_idx in pairs:
                 he = HalfEdge()
                 he.face = face
-                he.destination = self.vertex[dst_idx]
+                he.target_vertex = self.vertex[dst_idx]
 
                 src_vertex = self.vertex[src_idx]
                 if src_vertex.half_edge_out is None:
@@ -49,7 +49,6 @@ class Mesh :
 
                 # Appariement immédiat des twins
                 rev_key = (dst_idx, src_idx)
-                print(rev_key)
                 if rev_key in edge_map:
                     twin_he = edge_map[rev_key]
                     he.twin = twin_he
@@ -72,13 +71,33 @@ class Mesh :
 
             face.edge = first_he
             self.faces.append(face)
-        print(edge_map)
 
     def info(self):
         """Affiche le nombre de sommets, faces et demi-arêtes"""
         print(f"Sommets    : {len(self.vertex)}")
         print(f"Faces      : {len(self.faces)}")
         print(f"Half-Edges : {len(self.half_edges)}")
+
+        print("=== Voisins immédiats ===")
+        for i in [random.randint(0, len(self.vertex) - 1) for _ in range(3)]:
+            vertex = self.vertex[i]
+            neighbors = set()
+            neighbors.add(self.vertex.index(vertex.half_edge_out.prev.target_vertex))
+            neighbors.add(self.vertex.index(vertex.half_edge_out.next.target_vertex))
+
+            print(f"Sommet {i} : voisins = {neighbors}")
+
+        print("=== Sommet des Faces ===")
+        for i, f in enumerate(self.faces):
+            he_start = f.edge
+            he = he_start
+            verts = []
+            while True:
+                verts.append(self.vertex.index(he.target_vertex))
+                he = he.next
+                if he == he_start:
+                    break
+            print(f"{i}: vertices = {verts}")
 
     def visualize_faces(self, filename : str):
         vertices = []
@@ -93,8 +112,6 @@ class Mesh :
                     faces.append(face)
         # Initialisation de Polyscope
         ps.init()
-
-        # Extraction des coordonnées des sommets
 
         # Ajout du maillage à Polyscope
         ps.register_surface_mesh("Maillage", np.array(vertices), np.array(faces))
