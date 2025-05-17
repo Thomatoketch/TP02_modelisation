@@ -6,9 +6,9 @@ import numpy as np
 
 class Mesh :
     def __init__(self):
-        self.vertex : list[Vertex] = []
-        self.half_edges : list[HalfEdge] = []
-        self.faces : list[Face] = []
+        self.vertex : List[Vertex] = []
+        self.half_edges : List[HalfEdge] = []
+        self.faces : List[Face] = []
 
     def read_file(self, filename : str):
         faces_idx = []
@@ -23,73 +23,62 @@ class Mesh :
         self.constr_graph(faces_idx)
 
     def constr_graph(self, faces_idx):
-        edge_dict = {}
-        for idx in faces_idx:
+        edge_map: Dict[Tuple[int, int], HalfEdge] = {}
+
+        for face_id, verts in enumerate(faces_idx):
+            # Validation des indices
+            for vid in verts:
+                if not (0 <= vid < len(self.vertex)):
+                    raise IndexError(f"Vertex index {vid} hors bornes (face {face_id})")
+
             face = Face()
             prev_he = None
             first_he = None
-            k = len(idx)
-            for i in range(k):
+
+            pairs = list(zip(verts, verts[1:])) + [(verts[-1], verts[0])]
+            print(pairs)
+
+            for src_idx, dst_idx in pairs:
                 he = HalfEdge()
                 he.face = face
-                he.destination = self.vertex[idx[(i + 1) % k]]
-                src = self.vertex[idx[i]]
-                if src.half_edge_out is None:
-                    src.half_edge_out = he
-                key = (idx[i], idx[(i + 1) % k])
-                edge_dict[key] = he
+                he.destination = self.vertex[dst_idx]
+
+                src_vertex = self.vertex[src_idx]
+                if src_vertex.half_edge_out is None:
+                    src_vertex.half_edge_out = he
+
+                # Appariement immédiat des twins
+                rev_key = (dst_idx, src_idx)
+                print(rev_key)
+                if rev_key in edge_map:
+                    twin_he = edge_map[rev_key]
+                    he.twin = twin_he
+                    twin_he.twin = he
+
+                edge_map[(src_idx, dst_idx)] = he
                 self.half_edges.append(he)
-                if prev_he:
+
+                if prev_he is not None:
                     prev_he.next = he
                     he.prev = prev_he
                 else:
                     first_he = he
+
                 prev_he = he
+
+            # Ferme la chaîne circulaire des demi-arêtes
             prev_he.next = first_he
             first_he.prev = prev_he
+
             face.edge = first_he
             self.faces.append(face)
-
-        # appariement des twins
-        for (i, j), he in edge_dict.items():
-            twin = edge_dict.get((j, i))
-            if twin:
-                he.twin = twin
-                twin.twin = he
-
-    def vertex_neighbors(self, v):
-        neighbors = []
-        start = v.half_edge_out
-        he = start
-        while True:
-            neighbors.append(he.destination)
-            he = he.twin.next if he.twin else None
-            if he is None or he == start:
-                break
-        return neighbors
+        print(edge_map)
 
     def info(self):
         """Affiche le nombre de sommets, faces et demi-arêtes"""
         print(f"Sommets    : {len(self.vertex)}")
         print(f"Faces      : {len(self.faces)}")
         print(f"Half-Edges : {len(self.half_edges)}")
-
-        # affichage des voisins pour les trois premiers sommets
-        for i, v in enumerate(self.vertex[:3]):
-            neighbors = self.vertex_neighbors(v)
-            print(f"Voisins du sommet {i} : {[self.vertex.index(n) for n in neighbors]}")
-
-        # sommets d'une face donnée
-        for i, f in enumerate(self.faces[:2]):
-            he_start = f.edge
-            he = he_start
-            verts = []
-            while True:
-                verts.append(self.vertex.index(he.destination))
-                he = he.next
-                if he == he_start:
-                    break
-            print(f"Face {i} : {verts}")
 
     def visualize_faces(self, filename : str):
         vertices = []
