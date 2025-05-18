@@ -8,7 +8,7 @@ def print_mesh_details(mesh):
     # Half-Edges
     print("=== Half-Edges ===")
     for i, he in enumerate(mesh.half_edges):
-        dest = mesh.vertex.index(he.destination) if he.destination else None
+        dest = mesh.vertex.index(he.target_vertex) if he.target_vertex else None
         twin = mesh.half_edges.index(he.twin) if he.twin else None
         nxt  = mesh.half_edges.index(he.next) if he.next else None
         prev = mesh.half_edges.index(he.prev) if he.prev else None
@@ -24,7 +24,7 @@ def print_mesh_details(mesh):
         he = he_start
         verts = []
         while True:
-            verts.append(mesh.vertex.index(he.destination))
+            verts.append(mesh.vertex.index(he.target_vertex))
             he = he.next
             if he == he_start:
                 break

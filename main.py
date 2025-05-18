@@ -2,7 +2,7 @@ from Classes.Mesh import *
 from function import *
 
 mesh_test = Mesh()
-mesh_test.read_file("Hexa.obj")
+mesh_test.read_file("Cube.obj")
 mesh_test.info()
 #mesh_test.visualize_faces("Hexa.obj")
 
