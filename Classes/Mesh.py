@@ -112,9 +112,10 @@ class Mesh :
                     faces.append(face)
         # Initialisation de Polyscope
         ps.init()
-
         # Ajout du maillage à Polyscope
         ps.register_surface_mesh("Maillage", np.array(vertices), np.array(faces))
+        for i in self.faces :
+
 
         # Affichage
         ps.show()

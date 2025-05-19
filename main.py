@@ -10,6 +10,9 @@ if input("Afficher les details (y/n) : ") == "y":
     print_mesh_details(mesh_test)
 
 if input("Afficher les arêtes de bord (y/n) : ") == "y":
-    print_edge(mesh_test)
+    [print(f"Half-Edge: {x}") for x in print_edge(mesh_test)]
+
+if input("Afficher le dessin de l'objet (y/n) : ") == "y":
+    mesh_test.visualize_faces("Cube.obj")
 
 
