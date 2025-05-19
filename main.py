@@ -1,18 +1,23 @@
 from Classes.Mesh import *
 from function import *
+from loop_subdivision import butterfly_subdivision
+from loop_subdivision import loop_subdivision
 
 mesh_test = Mesh()
-mesh_test.read_file("Square3x3.obj")
+mesh_test.read_file("Hexa.obj")
 mesh_test.info()
-#mesh_test.visualize_faces("Hexa.obj")
 
-if input("Afficher les details (y/n) : ") == "y":
+if input("Afficher les détails ? (y/n) : ") == "y":
     print_mesh_details(mesh_test)
 
-if input("Afficher les arêtes de bord (y/n) : ") == "y":
-    [print(f"Half-Edge: {x}") for x in print_edge(mesh_test)]
+if input("Afficher les arêtes de bord ? (y/n) : ") == "y":
+    print_edge(mesh_test)
 
-if input("Afficher le dessin de l'objet (y/n) : ") == "y":
+choice = input("Quel schéma de subdivision ? (loop / butterfly / none) : ").strip().lower()
+if choice == "loop":
+    mesh_test = loop_subdivision(mesh_test, iterations=1)
+elif choice == "butterfly":
+    mesh_test = butterfly_subdivision(mesh_test, iterations=1)
+
+if input("Afficher dans Polyscope ? (y/n) : ") == "y":
     mesh_test.visualize_faces()
-
-
