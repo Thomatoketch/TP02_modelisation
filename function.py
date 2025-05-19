@@ -12,7 +12,7 @@ def print_mesh_details(mesh):
         twin = mesh.half_edges.index(he.twin) if he.twin else None
         nxt  = mesh.half_edges.index(he.next) if he.next else None
         prev = mesh.half_edges.index(he.prev) if he.prev else None
-        face_idx = mesh.faces.index(he.face) if he.face else None
+        face_idx = mesh.faces.index(he.facette) if he.facette else None
         print(
             f"{i}: dest={dest}, twin={twin}, next={nxt}, prev={prev}, face={face_idx}"
         )

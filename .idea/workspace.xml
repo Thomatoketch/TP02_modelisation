@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6475ea52-41f5-4076-82da-c81d8325329c" name="Changes" comment="question 4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/Face.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/Face.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes/Mesh.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/Mesh.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/function.py" beforeDir="false" afterPath="$PROJECT_DIR$/function.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
@@ -142,7 +141,7 @@
       <workItem from="1747490598606" duration="64000" />
       <workItem from="1747490722742" duration="11512000" />
       <workItem from="1747586032027" duration="989000" />
-      <workItem from="1747644544421" duration="951000" />
+      <workItem from="1747644544421" duration="1954000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <option name="closed" value="true" />
@@ -192,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747586256581</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="question 4">
+      <option name="closed" value="true" />
+      <created>1747645673009</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1747645673009</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,6 +236,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TP02$Mesh.coverage" NAME="Mesh Coverage Results" MODIFIED="1746638832254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Classes" />
-    <SUITE FILE_PATH="coverage/TP02$main.coverage" NAME="main Coverage Results" MODIFIED="1747645522331" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/TP02$main.coverage" NAME="main Coverage Results" MODIFIED="1747646526035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

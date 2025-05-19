@@ -10,6 +10,7 @@ class Mesh :
         self.vertex : List[Vertex] = []
         self.half_edges : List[HalfEdge] = []
         self.faces : List[Face] = []
+        self.faces_idx = []
 
     def read_file(self, filename : str):
         faces_idx = []
@@ -20,14 +21,13 @@ class Mesh :
                     self.vertex.append(Vertex(float(x), float(y), float(z)))
                 elif line.startswith("f "):
                     idx = [int(i) - 1 for i in line.split()[1:]]
-                    faces_idx.append(idx)
-        self.constr_graph(faces_idx)
+                    self.faces_idx.append(idx)
+        self.constr_graph()
 
-    def constr_graph(self, faces_idx):
+    def constr_graph(self):
         edge_map: Dict[Tuple[int, int], HalfEdge] = {}
 
-        for face_id, verts in enumerate(faces_idx):
-            # Validation des indices
+        for face_id, verts in enumerate(self.faces_idx):
             for vid in verts:
                 if not (0 <= vid < len(self.vertex)):
                     raise IndexError(f"Vertex index {vid} hors bornes (face {face_id})")
@@ -40,14 +40,13 @@ class Mesh :
 
             for src_idx, dst_idx in pairs:
                 he = HalfEdge()
-                he.face = face
+                he.facette = face
                 he.target_vertex = self.vertex[dst_idx]
 
                 src_vertex = self.vertex[src_idx]
                 if src_vertex.half_edge_out is None:
                     src_vertex.half_edge_out = he
 
-                # Appariement immédiat des twins
                 rev_key = (dst_idx, src_idx)
                 if rev_key in edge_map:
                     twin_he = edge_map[rev_key]
@@ -65,7 +64,6 @@ class Mesh :
 
                 prev_he = he
 
-            # Ferme la chaîne circulaire des demi-arêtes
             prev_he.next = first_he
             first_he.prev = prev_he
 
@@ -99,23 +97,29 @@ class Mesh :
                     break
             print(f"{i}: vertices = {verts}")
 
-    def visualize_faces(self, filename : str):
-        vertices = []
-        faces = []
-        with open(filename, 'r') as file:
-            for line in file:
-                toks = line.split()
-                if line.startswith("v "):
-                    vertices.append([float(v) for v in toks[1:]])
-                elif line.startswith("f "):
-                    face = [int(v.split('/')[0]) - 1 for v in toks[1:]]
-                    faces.append(face)
-        # Initialisation de Polyscope
-        ps.init()
-        # Ajout du maillage à Polyscope
-        ps.register_surface_mesh("Maillage", np.array(vertices), np.array(faces))
-        for i in self.faces :
+    def visualize_faces(self):
+        vertices = np.array([[v.x, v.y, v.z] for v in self.vertex])
+        faces = np.array(self.faces_idx)
 
+        ps.init()
+        ps_mesh = ps.register_surface_mesh("Maillage", np.array(vertices), np.array(faces))
+
+        boundary_faces = set()
+        for he in self.half_edges:
+            if he.twin is None:
+                boundary_faces.add(self.faces.index(he.facette))
+
+        M = faces.shape[0]
+        face_colors = np.ones((M, 3)) * 0.8
+        for f in boundary_faces:
+            face_colors[f] = [1.0, 0.0, 0.0]
+
+        ps_mesh.add_color_quantity(
+            "Frontières en rouge",  # nom
+            face_colors,  # (M,3)
+            defined_on='faces',  # <- IMPORTANT
+            enabled=True
+        )
 
         # Affichage
         ps.show()
