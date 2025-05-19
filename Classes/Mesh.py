@@ -67,7 +67,7 @@ class Mesh :
             prev_he.next = first_he
             first_he.prev = prev_he
 
-            face.edge = first_he
+            face.half_edge = first_he
             self.faces.append(face)
 
     def info(self):
@@ -87,7 +87,7 @@ class Mesh :
 
         print("=== Sommet des Faces ===")
         for i, f in enumerate(self.faces):
-            he_start = f.edge
+            he_start = f.half_edge
             he = he_start
             verts = []
             while True:

@@ -1,7 +1,7 @@
 from Classes.Mesh import *
 from function import *
-from loop_subdivision import butterfly_subdivision
-from loop_subdivision import loop_subdivision
+from butterfly_subdivision import *
+from loop_subdivision import *
 
 mesh_test = Mesh()
 mesh_test.read_file("Hexa.obj")

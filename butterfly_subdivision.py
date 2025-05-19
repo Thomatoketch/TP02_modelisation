@@ -79,9 +79,9 @@ def butterfly_subdivision(mesh: Mesh, iterations: int = 1) -> Mesh:
                 he2.prev = he1
                 he3.prev = he2
 
-                he1.face = face
-                he2.face = face
-                he3.face = face
+                he1.facette = face
+                he2.facette = face
+                he3.facette = face
 
                 face.half_edge = he1
                 new_mesh.half_edges.extend([he1, he2, he3])
@@ -91,6 +91,27 @@ def butterfly_subdivision(mesh: Mesh, iterations: int = 1) -> Mesh:
                     src_idx = new_mesh.vertex.index(he.prev.target_vertex)
                     if new_mesh.vertex[src_idx].half_edge_out is None:
                         new_mesh.vertex[src_idx].half_edge_out = he
+
+        edge_dict = {}
+        for he in new_mesh.half_edges:
+            v_start = he.prev.target_vertex
+            v_end = he.target_vertex
+            key = tuple(sorted((id(v_start), id(v_end))))
+            if key in edge_dict:
+                twin = edge_dict[key]
+                he.twin = twin
+                twin.twin = he
+            else:
+                edge_dict[key] = he
+
+        new_mesh.faces_idx = []
+        for face in new_mesh.faces:
+            he = face.half_edge
+            idx = []
+            for _ in range(3):
+                idx.append(new_mesh.vertex.index(he.target_vertex))
+                he = he.next
+            new_mesh.faces_idx.append(idx)
 
         mesh = new_mesh
 

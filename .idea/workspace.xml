@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6475ea52-41f5-4076-82da-c81d8325329c" name="Changes" comment="faces frontieres">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes/Mesh.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/Mesh.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Square3x3.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Square3x3.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP2- HalfEdge_Subdivision.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/butterfly_subdivision.py" beforeDir="false" afterPath="$PROJECT_DIR$/butterfly_subdivision.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/function.py" beforeDir="false" afterPath="$PROJECT_DIR$/function.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loop_subdivision.py" beforeDir="false" afterPath="$PROJECT_DIR$/loop_subdivision.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,6 +147,9 @@
       <workItem from="1747586032027" duration="989000" />
       <workItem from="1747644544421" duration="3484000" />
       <workItem from="1747655270911" duration="190000" />
+      <workItem from="1747655686859" duration="694000" />
+      <workItem from="1747656948132" duration="1215000" />
+      <workItem from="1747672554571" duration="1945000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <option name="closed" value="true" />
@@ -221,7 +231,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747655438493</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="faces frontieres">
+      <option name="closed" value="true" />
+      <created>1747656053471</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1747656053471</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,6 +277,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TP02$Mesh.coverage" NAME="Mesh Coverage Results" MODIFIED="1746638832254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Classes" />
-    <SUITE FILE_PATH="coverage/TP02$main.coverage" NAME="main Coverage Results" MODIFIED="1747647721575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/TP02$main.coverage" NAME="main Coverage Results" MODIFIED="1747674516270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
