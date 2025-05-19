@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6475ea52-41f5-4076-82da-c81d8325329c" name="Changes" comment="faces frontieres">
       <change afterPath="$PROJECT_DIR$/Square3x3.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.polyscope.ini" beforeDir="false" afterPath="$PROJECT_DIR$/.polyscope.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/Face.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/Face.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes/Mesh.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/Mesh.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cube.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Square.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hexa.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Hexa.obj" afterDir="false" />
@@ -65,24 +65,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Mesh.executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Cours/Semestre 8/Modélisation_Géométrique_3D/TP02",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "it.czerwinski.intellij.wavefront.settings.WavefrontObjSettingsConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Mesh.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Cours/Semestre 8/Modélisation_Géométrique_3D/TP02&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;it.czerwinski.intellij.wavefront.settings.WavefrontObjSettingsConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Cours\Semestre 8\Modélisation_Géométrique_3D\TP02" />
@@ -145,7 +145,7 @@
       <workItem from="1747490598606" duration="64000" />
       <workItem from="1747490722742" duration="11512000" />
       <workItem from="1747586032027" duration="989000" />
-      <workItem from="1747644544421" duration="3159000" />
+      <workItem from="1747644544421" duration="3484000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <option name="closed" value="true" />
@@ -211,7 +211,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747646966358</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="faces frontieres">
+      <option name="closed" value="true" />
+      <created>1747648082157</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1747648082157</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -108,6 +108,7 @@ class Mesh :
         for he in self.half_edges:
             if he.twin is None:
                 boundary_faces.add(self.faces.index(he.facette))
+        print(boundary_faces)
 
         M = faces.shape[0]
         face_colors = np.ones((M, 3)) * 0.8
